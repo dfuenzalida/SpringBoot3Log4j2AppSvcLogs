@@ -8,9 +8,9 @@ Build the webapp using Maven with `mvn clean package` and deploy the resulting f
 
 Once the applications is up and running, configure Diagnostic Settings in Azure Portal for the logs to be sent to a Log Analytics Workspace.
 
-Make sure to add the **App Service Application Logs** category.
+Make sure to add the **App Service Application Logs** category to the Diagnostic Settings configuration.
 
-Visit the `/`, `/warn` and `/error` endpoints of the web app, then run the following query in Azure Portal in the Logs blade:
+Visit the `/`, `/warn` and `/error` endpoints of the web app so some logs are emitted. Then, run the following query in Azure Portal in the Logs blade:
 
 ```kql
 AppServiceAppLogs
