@@ -28,6 +28,11 @@ public class AppServiceLogConverter extends LogEventPatternConverter {
     public void format(final LogEvent event, final StringBuilder buffer) {
         String eventLevelName = getAppSvcLevelName(event.getLevel().name());
         String message = event.getMessage().getFormattedMessage();
+
+        if (event.getThrown() != null) {
+            message += event.getThrown().getCause();
+        }
+
         String encoded = encoder.encodeToString(message.getBytes());
         buffer.append(String.format("x-ms-applog:%s:base64:%s", eventLevelName, encoded));
     }
