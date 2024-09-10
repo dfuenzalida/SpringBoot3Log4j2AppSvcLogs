@@ -18,6 +18,8 @@ AppServiceAppLogs
 | order by TimeGenerated desc
 ```
 
+![AppServiceAppLogs screenshot](https://raw.githubusercontent.com/dfuenzalida/SpringBoot3Log4j2AppSvcLogs/main/DiagnosticLogs.png "AppServiceAppLogs screenshot")
+
 
 ## Code outline
 
