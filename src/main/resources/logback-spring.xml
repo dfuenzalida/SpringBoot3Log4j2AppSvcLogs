@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %-5level [%thread]: %message%n%throwable
+            </Pattern>
+        </layout>
+    </encoder>
+  </appender>
+
+  <appender name="AppServiceAppLogsAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+      <layout class="com.example.SpringBoot3Log4j2AppSvcLogs.AppServiceLogbackLayout" />
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <!-- <appender-ref ref="Console" /> -->
+    <appender-ref ref="AppServiceAppLogsAppender" />
+  </root>
+</configuration>

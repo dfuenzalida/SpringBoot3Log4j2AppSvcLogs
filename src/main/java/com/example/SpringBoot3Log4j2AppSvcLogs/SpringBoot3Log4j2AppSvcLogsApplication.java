@@ -1,6 +1,10 @@
 package com.example.SpringBoot3Log4j2AppSvcLogs;
 
-import org.apache.commons.logging.*;
+// Log4j2 version
+// import org.apache.commons.logging.*;
+
+// Logback version
+import org.slf4j.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class SpringBoot3Log4j2AppSvcLogsApplication {
 
-    private Log logger = LogFactory.getLog(SpringBoot3Log4j2AppSvcLogsApplication.class);
+	// Log4j2 version
+    // private Log logger = LogFactory.getLog(SpringBoot3Log4j2AppSvcLogsApplication.class);
+
+	// Logback version
+	private static final Logger logger = LoggerFactory.getLogger(SpringBoot3Log4j2AppSvcLogsApplication.class);
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBoot3Log4j2AppSvcLogsApplication.class, args);
@@ -17,7 +26,7 @@ public class SpringBoot3Log4j2AppSvcLogsApplication {
 
 	@GetMapping("/")
 	public String home() {
-		String output = String.format("Java version: %s. Log date: %s", System.getProperty("java.version"), new java.util.Date());
+		String output = String.format("Logger: logback. Java version: %s. Log date: %s", System.getProperty("java.version"), new java.util.Date());
 		logger.info(output);
 		return output;
 	}

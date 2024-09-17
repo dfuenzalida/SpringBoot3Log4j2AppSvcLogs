@@ -2,7 +2,8 @@ package com.example.SpringBoot3Log4j2AppSvcLogs;
 
 import java.io.*;
 
-import org.apache.commons.logging.*;
+// import org.apache.commons.logging.*; // Log4j2 version
+import org.slf4j.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -13,7 +14,8 @@ import jakarta.servlet.http.HttpServletRequest;
 @ControllerAdvice(basePackageClasses = SpringBoot3Log4j2AppSvcLogsApplication.class)
 public class MyControllerAdvice extends ResponseEntityExceptionHandler {
 
-    private Log logger = LogFactory.getLog(MyControllerAdvice.class);
+    // private Log logger = LogFactory.getLog(MyControllerAdvice.class);
+	private static final Logger logger = LoggerFactory.getLogger(MyControllerAdvice.class);
 
 	@ResponseBody
 	@ExceptionHandler(Exception.class)
