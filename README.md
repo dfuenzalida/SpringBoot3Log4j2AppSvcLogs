@@ -1,6 +1,6 @@
-# Example Spring Boot 3 webapp with Log4j2 and logging to App Service Logs
+# Example Spring Boot 3 webapp with Logback and logging to App Service Logs
 
-This is an example Spring Boot 3 webapp which uses Log4j2 for logging, configured in a way such that logs are sent to the `AppServiceAppLogs` in Log Analytics.
+This is an example Spring Boot 3 webapp which uses Logback for logging, configured in a way such that logs are sent to the `AppServiceAppLogs` in Log Analytics.
 
 ## Usage
 
@@ -25,5 +25,5 @@ AppServiceAppLogs
 
 * `SpringBoot3Log4j2AppSvcLogsApplication.java`: The main class is also a Controller with 3 endpoints: `/` for a regular messsage, `/warn` which logs a warning message and `/error` which throws an Exception
 * `MyControllerAdvice.java`: Takes unhandled exceptions from any controllers, captures their stack trace and logs the result as an error.
-* `AppServiceLogConverter.java`: Implements a Log4j2 pattern so that logs appenders that use the pattern defined by this class will take a log event and perform the conversion to Base64 and formatting required for these events to be published to the AppServiceAppLogs in Log Analytics.
-* `log4j2-spring.xml` is the Log4j2 configuration file, it uses the special Log appender defined in `AppServiceLogConverter`.
+* `AppServiceLogbackLayout.java`: Implements a Logback layout which performs the conversion to Base64 and formatting required for these events to be published to the AppServiceAppLogs in Log Analytics.
+* `logback-spring.xml` is the Logback configuration file, it uses the special Log appender defined in `AppServiceLogbackLayout`.
