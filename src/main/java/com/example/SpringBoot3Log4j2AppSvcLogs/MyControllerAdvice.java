@@ -7,8 +7,8 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice(basePackageClasses = SpringBoot3Log4j2AppSvcLogsApplication.class)
 public class MyControllerAdvice extends ResponseEntityExceptionHandler {
